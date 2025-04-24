@@ -1,0 +1,15 @@
+.copy-notification {
+    position: absolute; /* Позиционируем уведомление абсолютно */
+    background-color: rgba(0, 128, 0, 0.8); /* Полупрозрачный зеленый фон */
+    color: white; /* Цвет текста */
+    padding: 5px 10px; /* Отступы */
+    border-radius: 5px; /* Закругленные углы */
+    top: 50px; /* Положение сверху */
+    left: 10px; /* Положение слева */
+    z-index: 1000; /* Обеспечиваем, чтобы уведомление было выше других элементов */
+    transition: opacity 0.3s ease; /* Плавный переход для исчезновения */
+}
+
+.copy-notification.fade-out {
+    opacity: 0; /* Применяем класс для исчезновения */
+}

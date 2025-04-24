@@ -1,0 +1,28 @@
+.ul-div {
+    margin: 10px;
+    margin-top: 0px;
+    border-radius: 5px;
+}
+.dropdown {
+    list-style-type: none;
+    padding: 0;
+}
+.dropdown li {
+    padding: 5px;
+    cursor: pointer;
+    color: hsla(187, 43%, 92%, 1);;
+    transition: color 0.3s;
+} 
+.dropdown li:hover{
+    color: rgb(126, 128, 129);
+}
+.content-png {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.content-png img {
+    max-width: 100%;
+    height: auto;
+}
+  

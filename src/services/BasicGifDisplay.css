@@ -1,0 +1,63 @@
+:root {
+    --lastbg: hsla(213, 62%, 36%, 1);
+    --secondbg: hsla(197, 66%, 60%, 1);
+    --text: hsla(187, 43%, 92%, 1);
+    --mainbg: hsla(209, 51%, 11%, 1);
+    --button:  hsla(0, 57%, 48%, 1)
+}
+
+.output-hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none; 
+    height: 5px; 
+    background-color: var(--lastbg);
+}
+
+.paragraph{
+    font-size: 1rem;
+}
+.GifDisplayDiv{
+    display: flex;
+    flex-wrap: wrap;
+}
+.output-div {
+    display: flex; 
+    align-items: stretch; 
+    min-height: 300px;
+}
+
+.Appear-div {
+    flex: 1;
+}
+
+.reverse-hr {
+    width: 4px; 
+    min-height: 300px; 
+    background-color: black; 
+    margin: 0 0px; 
+    border: none; 
+    background-color: var(--lastbg);
+}
+
+.Upgrade-div {
+    flex: 1; 
+    display: flex;
+    flex-wrap: wrap;
+}
+.gif{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 600px) {
+    .paragraph{
+        font-size: 0.7rem;
+    }
+    .GifDisplayImg{
+        height: 60px;
+        width: 60px;
+    }
+}
