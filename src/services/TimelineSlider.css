@@ -3,6 +3,7 @@
 * {
     margin: 0; 
     padding: 0; 
+    box-sizing: border-box;
 }
 
 :root {
@@ -10,204 +11,294 @@
     --secondbg: hsla(197, 66%, 60%, 1);
     --text: hsla(187, 43%, 92%, 1);
     --mainbg: hsla(209, 51%, 11%, 1);
-    --button:  hsla(0, 57%, 48%, 1)
+    --button: hsla(0, 57%, 48%, 1);
+    --button-hover: hsla(0, 57%, 38%, 1);
 }
-body{
+
+body {
     background-color: var(--mainbg);
     color: var(--text);
     font-family: "Special Gothic Expanded One", sans-serif;
     font-weight: 400;
     font-style: normal;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     position: relative;
     display: flex;
     justify-content: center;
+    padding: 20px;
 }
+
 .main-div {
-    margin-top: 150px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     max-width: 725px;
+    width: 100%;
+}
 
-}
-.timeline-h1{
+.timeline-h1 {
     font-size: 3rem;
+    text-align: center;
 }
-.date-label{
+
+.date-label {
     margin-top: 10px;
     margin-bottom: 5px;
+    text-align: center;
 }
-.input-div{
-    margin-top: 100px;
+
+.input-div {
+    margin-top: 50px;
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 100%;
 }
-.range-input{
+
+.range-input {
     width: 100%;
-    margin: 10px 0px 10px 0px;
+    margin: 15px 0;
     -webkit-appearance: none;
     background: transparent;
+    height: 20px; /* Добавлено для лучшего касания на мобильных */
 }
-.range-input::-webkit-slider-thumb {
-    width: 10px;
-    height: 30px;
-    -webkit-appearance: none;
-    background-color: var(--button);
-    margin-top: -10px;
-    transition: background-color 0.3s;
-    border-radius: 5px;
-}
-.range-input::-webkit-slider-thumb:hover{
-    cursor: pointer;
-    background-color: hsla(0, 57%, 38%, 1)
-}
-.range-input::-moz-range-thumb {
-    width: 10px;
-    height: 20px;
-    background-color: var(--button);
-    margin-top: -10px;
-    transition: background-color 0.3s;
-    border-radius: 5px;
-}
-.range-input::-moz-range-thumb :hover{
-    cursor: pointer;
-    background-color: hsla(0, 57%, 38%, 1)
-}
+
+/* Стиль для трека (полоски) */
 .range-input::-webkit-slider-runnable-track {
     background-color: var(--text);
-    height: 10px;
-    border-radius: 5px;
+    height: 8px; /* Уменьшенная высота для мобильных */
+    border-radius: 4px;
+    border: none;
 }
 
 .range-input::-moz-range-track {
     background-color: var(--text);
-    height: 10px;
-    border-radius: 5px;
+    height: 8px;
+    border-radius: 4px;
+    border: none;
 }
-.cotrol-buttons{
+
+/* Стиль для бегунка (ползунка) */
+.range-input::-webkit-slider-thumb {
+    width: 18px; /* Увеличен для мобильных */
+    height: 36px; /* Увеличен для мобильных */
+    -webkit-appearance: none;
+    background-color: var(--button);
+    border-radius: 6px;
+    margin-top: -14px; /* Центрирование по вертикали */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid var(--text); /* Добавлен контрастный бордер */
+}
+
+.range-input::-moz-range-thumb {
+    width: 18px;
+    height: 36px;
+    background-color: var(--button);
+    border-radius: 6px;
+    border: 2px solid var(--text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Улучшения для iOS */
+.range-input::-webkit-slider-thumb {
+    -webkit-tap-highlight-color: transparent; /* Убирает голубой highlight при тапе */
+    transform: translateZ(0); /* Фикс для некоторых устройств iOS */
+}
+
+/* Ховер и активные состояния */
+.range-input::-webkit-slider-thumb:hover,
+.range-input::-moz-range-thumb:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.1);
+}
+
+.range-input:active::-webkit-slider-thumb,
+.range-input:active::-moz-range-thumb {
+    transform: scale(1.15);
+}
+
+/* Фикс для Firefox */
+@-moz-document url-prefix() {
+    .range-input {
+        height: 12px;
+    }
+}
+
+/* Адаптация для очень маленьких экранов */
+@media (max-width: 375px) {
+    .range-input::-webkit-slider-thumb {
+        width: 16px;
+        height: 32px;
+        margin-top: -12px;
+    }
+    
+    .range-input::-moz-range-thumb {
+        width: 16px;
+        height: 32px;
+    }
+    
+    .range-input::-webkit-slider-runnable-track,
+    .range-input::-moz-range-track {
+        height: 6px;
+    }
+}
+
+.cotrol-buttons {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
-button{
+
+button {
     background-color: var(--button);
     border: 1px solid transparent;
-    margin: 10px;
+    margin: 5px;
     padding: 10px;
-    width: 80px;
+    min-width: 80px;
     border-radius: 8px;
     color: var(--text);
     font-weight: 900;
     transition: background-color 0.3s;
+    font-family: "Special Gothic Expanded One", sans-serif;
 }
-button:hover{
+
+button:hover {
     cursor: pointer;
-    background-color: hsla(0, 57%, 38%, 1)
-
+    background-color: var(--button-hover);
 }
 
-.date-input{
-    width: 360px;
-    appearance: none;
+.date-input {
+    width: 100%;
+    max-width: 360px;
     padding: 10px;
     border: 1px solid transparent;
     background-color: var(--button);
     color: var(--text);
     font-weight: 900;
     border-radius: 8px;
+    font-family: "Special Gothic Expanded One", sans-serif;
+    text-align: center;
 }
 
-.footer-hr{
+.footer-hr {
     margin-top: 20px;
     margin-bottom: 20px;
     border: none; 
     height: 5px; 
     background-color: var(--lastbg);
-}
-.div-footer{
     width: 100%;
 }
-a{
+
+.div-footer {
+    width: 100%;
+    text-align: center;
+}
+
+a {
     text-decoration: none;
     color: var(--lastbg);
     transition: color 0.3s;
 }
-a:hover{
-    color:hsla(213, 62%, 26%, 1) ;
+
+a:hover {
+    color: hsla(213, 62%, 26%, 1);
     cursor: pointer;
 }
-.donate-div{
+
+.donate-div {
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 50px;
     padding: 10px;
+    text-align: center;
 }
-.crypto-h3{
+
+.crypto-h3 {
     font-size: 2rem;
     margin-bottom: 30px;
     margin-top: 40px;
 }
 
-.click-to-copy-label{
+.click-to-copy-label {
     font-size: 0.9rem;
     margin-top: 5px;
     margin-bottom: 10px;
 }
 
-.nft-label{
+.nft-label {
     margin-bottom: 30px;
 }
 
-
-@media (max-width: 600px) {
-    button{
-
-        margin: 5px;
-        margin-top: 10px;
-        padding: 5px;
-        width: 60px;
-    }
-    .date-input{
-        width: 255px;
-        padding: 7px;
-    }
-    .no-gifts{
-        font-size: 1rem;
-    }
-    .no-upgrades {
-        font-size: 1rem;
-    }
-    .name-png-span{
-        font-size: 0.9rem; 
-    }
-    .png-container img{
-        width: 24px;
-        height: 24px;
-    }
-}
-.no-gifts {
-    text-align: center;
-    font-size: 1.2em;
-    color: #888;
-    margin-top: 20px;
-}
+.no-gifts,
 .no-upgrades {
     text-align: center;
     font-size: 1.2em;
     color: #888;
     margin-top: 20px;
 }
-.Upgrade-div{
+
+.Upgrade-div,
+.Appear-div {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.Appear-div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+
+@media (max-width: 768px) {
+    .main-div {
+        margin-top: 30px;
+    }
+    
+    .timeline-h1 {
+        font-size: 2.2rem;
+    }
+    
+    .input-div {
+        margin-top: 40px;
+    }
+    
+    .crypto-h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+    
+    .date-input {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    
+    button {
+        padding: 8px;
+        min-width: 70px;
+        font-size: 0.9rem;
+    }
+    
+    .donate-div {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-h1 {
+        font-size: 1.8rem;
+    }
+    
+    .crypto-h3 {
+        font-size: 1.3rem;
+    }
+
+    
+
+    
+    .no-gifts,
+    .no-upgrades {
+        font-size: 1rem;
+    }
 }
