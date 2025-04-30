@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from  'react-router-dom';
 
 function App() {
      return (
-      <Router>
+      <Router basename="/TgGiftsTimeline">
        <Routes>
          <Route path="/" element={<TimelineSlider/>} />
          <Route path="/donate" element={<Donate/>} />
