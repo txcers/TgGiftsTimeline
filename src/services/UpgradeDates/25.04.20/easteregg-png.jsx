@@ -26,7 +26,7 @@ const PngDisplay = () => {
                         width={scale} 
                         height={scale} 
                         alt="easter egg pngs" 
-                        src={png} 
+                        src={png}
                     />
                 ))}
             </div>
