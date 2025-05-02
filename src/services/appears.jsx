@@ -23,6 +23,7 @@ import TwentyTwoAppear from "./AppearDates/25-03-30-gif";
 import TwentyThreeAppear from "./AppearDates/25-04-10-gif";
 import TwentyFourAppear from "./AppearDates/25-04-12-gif";
 import TwentyFiveAppear from "./AppearDates/25-04-19-gif";
+import TwentySixAppear from "./AppearDates/25-05-01-gif";
 import React from "react";
 
 const appearComponents = [
@@ -50,7 +51,8 @@ const appearComponents = [
     TwentyTwoAppear,
     TwentyThreeAppear,
     TwentyFourAppear,
-    TwentyFiveAppear
+    TwentyFiveAppear,
+    TwentySixAppear
 ];
 
 function Appears({ selectedDate }) {
