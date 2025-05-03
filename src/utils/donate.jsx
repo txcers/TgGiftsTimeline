@@ -24,7 +24,7 @@ function Donate() {
                 </a>
             </label>
             <label className='click-to-copy-label'>click to copy</label>
-            <label className='nft-label'>NFT:<a href="https://t.me/wowkie"> me</a></label>
+            <label className='nft-label'>NFT:<a href="https://t.me/txcvrs"> me</a></label>
             <Link to="/">Back to page</Link>
         </div>
     );

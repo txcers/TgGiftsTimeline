@@ -105,7 +105,7 @@ function TimelineSlider() {
             <hr className="footer-hr"/>
             <p className='parag'>developer: <a href='https://t.me/+s_LXhp7dyMFjY2Vi'> wowkie</a></p>
             <p className='parag'>telegram channel: <a href='https://t.me/wtchtg'> WatchingTelegram</a></p>
-            <p className="parag">find bugs or wanna to response: <a href='https://t.me/txcers'>Telegram</a></p>
+            <p className="parag">find bugs or wanna to response: <a href='https://t.me/txcvrs'>Telegram</a></p>
             <p className="parag">donate: <Link to="/donate"> Links</Link></p>
             <p className="versioncontrolparag">version 1.0</p>
         </div>
