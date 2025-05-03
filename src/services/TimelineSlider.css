@@ -119,6 +119,10 @@ body {
 .range-input:active::-moz-range-thumb {
     transform: scale(1.15);
 }
+.versioncontrolparag{
+    font-size: 0.5rem;
+    color: #888;
+}
 
 /* Фикс для Firefox */
 @-moz-document url-prefix() {
